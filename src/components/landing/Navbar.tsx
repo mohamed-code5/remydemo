@@ -196,7 +196,7 @@ export function Navbar() {
             <Button
               size="lg"
               className={CTA_CLASS}
-              render={<a href="#demo" />}
+              render={<a href="/demo" />}
               nativeButton={false}
             >
               Book a demo
@@ -287,7 +287,7 @@ export function Navbar() {
                     </Button>
                     <Button
                       className={`${CTA_CLASS} w-full justify-center`}
-                      render={<a href="#demo" />}
+                      render={<a href="/demo" />}
                       nativeButton={false}
                       onClick={() => setOpen(false)}
                     >

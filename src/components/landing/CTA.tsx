@@ -41,9 +41,15 @@ export function CTA() {
             </p>
 
             <form
-              onSubmit={(event) => {
+              onSubmit={async (event) => {
                 event.preventDefault();
-                if (email.trim()) setSent(true);
+                if (!email.trim()) return;
+                const response = await fetch("/api/demo", {
+                  method: "POST",
+                  headers: { "content-type": "application/json" },
+                  body: JSON.stringify({ name: "Website visitor", email }),
+                });
+                if (response.ok) setSent(true);
               }}
               className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3 sm:flex-row"
             >
